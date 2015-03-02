@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>48D8276B-D5A0-4AD6-B7BC-BAF4A2E0F862</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wk4_Assignment_Facebook</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AC03A264AF558A277C66B34371803E94B36F5C1D</key>
+		<string>https://github.com/bryanleung/Wk4_Assignment_Facebook.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Wk4_Assignment_Facebook.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AC03A264AF558A277C66B34371803E94B36F5C1D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bryanleung/Wk4_Assignment_Facebook.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AC03A264AF558A277C66B34371803E94B36F5C1D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AC03A264AF558A277C66B34371803E94B36F5C1D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Wk4_Assignment_Facebook</string>
+		</dict>
+	</array>
+</dict>
+</plist>

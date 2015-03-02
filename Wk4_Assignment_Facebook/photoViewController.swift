@@ -16,6 +16,7 @@ class photoViewController: UIViewController, UIScrollViewDelegate {
     
     var isPresenting: Bool = true
     var interactiveTransition: UIPercentDrivenInteractiveTransition!
+
     
     @IBOutlet weak var photo: UIImageView!
     var imageView: UIImage!
@@ -44,8 +45,11 @@ class photoViewController: UIViewController, UIScrollViewDelegate {
         var offset = abs(scrollView.contentOffset.y)
         var alpha = offset/scrollThreshold
         
-        println(alpha)
-        scrollView.backgroundColor = UIColor(white: 0, alpha: 1 - alpha)
+        //println(alpha)
+        if(scrollView.zooming == false){
+            scrollView.backgroundColor = UIColor(white: 0, alpha: 1 - alpha)
+        }
+        
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.doneButton.alpha = 0
             self.photoActions.alpha = 0
@@ -60,7 +64,7 @@ class photoViewController: UIViewController, UIScrollViewDelegate {
         willDecelerate decelerate: Bool) {
             var offset = abs(scrollView.contentOffset.y)
         
-            if(offset > scrollThreshold){
+            if(offset > scrollThreshold && scrollView.zooming == false){
                 dismissViewControllerAnimated(true, completion: nil)
             }
             // This method is called right as the user lifts their finger
@@ -77,7 +81,33 @@ class photoViewController: UIViewController, UIScrollViewDelegate {
         
     }
 
-
+    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
+        return photo
+    }
+    
+    func scrollViewWillBeginZooming(scrollView: UIScrollView, withView view: UIView!){
+        // called before the scroll view begins zooming its content
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.doneButton.alpha = 0
+            self.photoActions.alpha = 0
+            })
+        
+        
+    }
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat){
+        // scale between minimum and maximum. called after any 'bounce' animations
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.doneButton.alpha = 1
+            self.photoActions.alpha = 1
+            
+        })
+    }
+    
+    func scrollViewDidZoom(scrollView: UIScrollView){
+        scrollView.backgroundColor = UIColor(white: 0, alpha: 1)
+    }// any zoom scale changes
+    
+    
     
     @IBAction func didPressDoneButton(sender: UITapGestureRecognizer) {
         dismissViewControllerAnimated(true, completion: nil)
